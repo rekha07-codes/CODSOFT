@@ -1,0 +1,33 @@
+import random
+
+print("=== ROCK PAPER SCISSORS GAME ===")
+
+choices = ["rock", "paper", "scissors"]
+
+while True:
+
+    player_choice = input("\nChoose Rock, Paper, Scissors: ").lower()
+
+    if player_choice not in choices:
+        print("Invalid choice! please try again.")
+        continue
+    
+    system_choice = random.choice(choices)
+
+    print("Your Choice: ", player_choice)
+    print("Computer Choice: ", system_choice)
+
+    if player_choice == system_choice:
+        print("Match Tied!")
+
+    elif(player_choice == "rock" and system_choice == "scissors") or (player_choice == "paper" and system_choice == "rock") or (player_choice == "scissors" and system_choice == "paper"):
+        print("You Won the Game!")
+
+    else:
+        print("Computer Won the Game!")
+
+    play_again = input("\nDo you want to play again? (yes/no): ").lower()
+
+    if play_again != "yes":
+        print("Game Over. Thank you!")
+        break
